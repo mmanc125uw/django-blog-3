@@ -94,6 +94,13 @@ edit mysite/templates/login.html		; per lesson, for login
 edit mysite/mysite/urls.py			; per lesson, for login, logout
 http://localhost:8000/admin		; test login page
 
+----------------------------------
+
+lesson 8 assignment notes, continue blogging app from lesson 7
+django addons (all-auth, ModelForm)
+pip install django-allauth
+
+
 
 
 
