@@ -99,6 +99,40 @@ http://localhost:8000/admin		; test login page
 lesson 8 assignment notes, continue blogging app from lesson 7
 django addons (all-auth, ModelForm)
 pip install django-allauth
+update settings.py			; per lesson all-auth instrs
+update urls.py				; per lesson all-auth instrs
+python manage.py migrate		; comit
+
+;setup facebook app
+login facebook.com
+	change url to developers.facebook.com
+	follow video to create an app https://www.youtube.com/watch?v=-XME8Q25omQ
+	set site url = localhost:8000		
+		scroll to bottom click add platform
+		select website
+		set site url = localhost:8000
+	USE DEV MODE, no need to swith to live mode, this way no domain is needed
+
+	Note:
+		Not needed since we are in dev mode, but just for ref
+		https://stackoverflow.com/questions/13376710/facebook-app-domain-name-when-using-localhost
+
+http://localhost:8000/admin		; follow configuration per lesson
+edit home->sites from example.com to localhost:8000 FB Login
+add home->social application->add
+	click add social application
+	select provider == Facebook
+	client id = 662030651180909	; app id
+	secret key = 68288648fb895a09a06cd720334f1032	; app secret
+	specify localhost:8000 for the chosen site
+	click save
+
+test
+http://localhost:8000/admin/socialaccount/socialapp/
+http://localhost:8000/accounts/admin
+http://localhost:8000/accounts/facebook/login
+
+
 
 
 
