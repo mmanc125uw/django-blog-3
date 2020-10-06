@@ -2,7 +2,19 @@ from django.shortcuts import render
 from blogging.models import Post, Category
 from django.http import HttpResponse, HttpResponseRedirect, Http404
 from django.template import loader
+from blogging.forms import ShortPostCreateForm
+from django import forms
 
+def ShortPost_create_view(request):
+ 
+    print('Diag***: Processing the submitted ModelForm create short post')
+    form = ShortPostCreateForm(request.POST or None)
+    if form.is_valid():
+        form.save()
+    context = {
+        'form': form
+    }
+    return render(request, "blogging/ShortPostForm_create.html", context)
 
 def stub_view(request, *args, **kwargs):
     body = "Stub View\n\n"

@@ -131,10 +131,18 @@ test
 http://localhost:8000/admin/socialaccount/socialapp/
 http://localhost:8000/accounts/admin
 http://localhost:8000/accounts/facebook/login
+	user: mikea
 
-
-
-
+;django addon ModelForm
+;create a django form from an existing model
+;follow instructions per
+;represent db model as a form (ref doc http://blog.appliedinformaticsinc.com/using-django-modelform-a-quick-guide/)
+python manage.py makemigrations		; migrate the changes to the db
+python manage.py migrate
+edit views.py, urls.py, forms.py	; edit per ModelForm requirements
+start python manage.py runserver	;  # Then visit http://localhost:8000/admin/
+browser http://localhost:8000/create	; submit ModelForm, test create short post
+browser http://localhost:8000/admin/posts	; test the create short post form submission
 
 
 

@@ -1,0 +1,15 @@
+<DOCTYPE html>
+<html>
+<head>
+<title>edit</title>
+</head>
+<body>
+ 
+<form method="post" >
+{% csrf_token %}
+{{form.as_p}}
+
+<input type="submit" style=" height: 20px; width: 60px" class="btn btn-default" value="Save"</>
+</form>
+</body>
+</html>
